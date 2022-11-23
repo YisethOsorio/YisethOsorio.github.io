@@ -1,0 +1,240 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Registrado:</title>
+    <title>Cotización</title>
+    <meta charset="UTF-8"/>
+
+    <style>
+
+        /* --- --- BARRA LATERAL --- --- */
+        .barra-lateral {
+            background: #262a34;
+            color: #fff;
+            min-width: 300px;
+            min-height: 100vh;
+        }
+
+        .barra-lateral a {
+            color: #fff;
+        }
+
+        /* --- LOGO --- */
+        .barra-lateral .logo {
+            background: #0275db;
+        }
+
+        .barra-lateral .logo h2 {
+            font-size: 30px;
+            font-family:courier,arial,helvética;
+            text-align: center;
+            font-weight: 300;
+        }
+        /* --- MENU --- */
+        .barra-lateral .menu a {
+            display: block;
+            padding: 20px;
+            font-family:courier,arial,helvética;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255, .1);
+        }
+
+        .barra-lateral .menu a:hover {
+            background: #35ae6b;
+        }
+
+        .barra-lateral .menu a svg {
+            margin-right: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+   <header >
+            <div class="container-fluid">
+                <div class="row">
+                    <aside class="barra-lateral col-12 col-sm-auto p-0">
+                        <div class="logo">
+                            <h2 class="py-4 m-0">Dashboard</h2>
+                        </div>
+                        <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                            <form method="POST" th:action="@{/cotizacion}">
+
+                                <a href="#" onclick="this.parentNode.submit();"  >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
+                                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                                    </svg>
+                                    Cotizacion
+                                </a>
+                            </form>
+                            <form method="POST" th:action="@{/buscarCotizacion}">
+                                <a href="#" onclick="this.parentNode.submit();" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
+                                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                                    </svg>
+                                    Buscar Cotizacion
+                                </a>
+                            </form>
+                            <form method="POST" th:action="@{/buscarContrato}" >
+                                <a href="#" onclick="this.parentNode.submit();"     >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
+                                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                                    </svg>
+                                    Buscar Contrato
+                                </a>
+                            </form>
+
+                            <form method="POST" th:action="@{/logout}">
+
+                                <a href="#" onclick="this.parentNode.submit();"  >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16" style="  margin-right: 10px;">>
+                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                    </svg>
+                                    Salir
+                                </a>
+                            </form>
+
+
+                        </nav>
+                    </aside>
+                    <main class="col-9">
+                        <div class="container" style="font-family:courier,arial,helvética;">
+                            <div class="row ">
+
+                                <h2 class="titulo-coti text-center py-2" style="font-family:courier,arial,helvética;"> <strong> Cotización </strong> </h2>
+                                <form th:action="@{/guardar}" method="post" th:object="${cotizacion}">
+                                    <div class="row">
+                                        <div>
+                                            <li class="list-group-item list-group-item-action list-group-item-action"  th:field="*{idCotizacion}"/>Numero cotizacion: </li>
+
+
+                                            <ul th:each="error, contador : ${estado.error}">                                         
+                                                <li class="list-group-item list-group-item-action list-group-item-danger">[[${error.mensaje}]]</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="primerNombre" class="form-label">Primer Nombre</label>
+                                            <input type="text" class="form-control" placeholder="Primer Nombre" name="primerNombre" th:field="*{primerNombre}" />
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="segundoNombre" class="form-label">Segundo Nombre</label>
+                                            <input type="text" class="form-control" placeholder="Segundo Nombre" name="segundoNombre" th:field="*{segundoNombre}" />
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="primerapellido" class="form-label">Primer Apellido</label>
+                                            <input type="text" class="form-control" placeholder="Primer Apellido" name="primerApellido" th:field="*{primerApellido}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="segundoapellido" class="form-label">Segundo Apellido</label>
+                                            <input  type="text" class="form-control " placeholder="Segundo Apellido" name="segundoApellido" th:field="*{segundoApellido}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="tipoIdentificacion" class="form-label">Tipo de Identificación</label>
+                                            <select name="tipoIdentificacion" th:field="*{tipoIdentificacion}" class="form-select">
+                                                <option value="0">Seleccione Tipo de Identificación</option>
+                                                <option value="1">Cédula de Ciudadanía</option>
+                                                <option value="2">Tarjeta de Identidad</option>
+                                                <option value="3">Cédula de Extranjería</option>
+                                                <option value="4">Pasaporte</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="numeroIdentificacion" class="form-label">Numero de Identificación</label>
+                                            <input type="number" class="form-control" placeholder="Identificación" name="numeroIdentificacion" th:field="*{numeroIdentificacion}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="direccion" class="form-label">Dirección del Evento</label>
+                                            <input  type="text" class="form-control" placeholder="Ingrese la Dirección" name="direccionEvento"  th:field="*{direccionEvento}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="barrio" class="form-label">Barrio del Evento</label>
+                                            <input  type="text" class="form-control" placeholder="Ingrese el Barrio" name="barrio"  th:field="*{barrio}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="localidad" class="form-label">Localidad del Evento</label>
+                                            <input  type="text" class="form-control" placeholder="Ingrese la Localidad" name="localidad" th:field="*{localidad}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="hora" class="form-label">Hora de llegada al Evento</label>
+                                            <input type="time" class="form-control" name="hora" th:field="*{hora}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="fecha" class="form-label">Fecha del Evento </label>
+                                            <input type="date" class="form-control" name="fecha" th:field="*{fecha}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="numerocontacto" class="form-label">Primer Numero de Contacto</label>
+                                            <input type="number" class="form-control" placeholder="Ingrese numero" name="numeroContacto" th:field="*{numeroContacto}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="numerocontacto" class="form-label">Segundo Numero de Contacto</label>
+                                            <input type="number" class="form-control" placeholder="Ingrese numero" name="segundoContacto"  th:field="*{segundoContacto}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="numerocontacto" class="form-label">Homenajeado del Evento</label>
+                                            <input type="text" class="form-control" placeholder="" name="homenajeado" th:field="*{homenajeado}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="numerocontacto" class="form-label">Edad del Homenajeado</label>
+                                            <input type="number" class="form-control" placeholder="Ingrese la Edad" name="edad" th:field="*{edad}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="email" class="form-label">Correo Electronico</label>
+                                            <input type="email" class="form-control" placeholder="correo@correo.com" name="email" th:field="*{email}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="tipoEvento" class="form-label">Tipo de Evento</label>
+                                            <select class="form-select" name="idPaquete" id="idPaquete" aria-label="Default select example">
+                                                <option value="0">Elija Tipo de Evento</option>
+
+                                                <option th:each="paquete : ${paquetes}" 
+                                                        th:value="${paquete.idPaquete}" 
+                                                        th:text="${paquete.nombre}" >
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="horasEvento" class="form-label">¿Cuántas Horas Deséa el Evento?</label>
+                                            <input type="number" class="form-control" placeholder="Ingrese hora" name="horasEvento" th:field="*{horasEvento}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="valortotal" class="form-label">Valor Total</label>
+                                            <input type="number" class="form-control" placeholder="Ingrese Valor Total" name="valorTotal" th:field="*{valorTotal}" step="any"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="anticipo" class="form-label">Anticipo</label>
+                                            <input type="number" class="form-control" placeholder="Ingrese Anticipo" name="anticipo" th:field="*{anticipo}" step="any"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="saldo" class="form-label">Saldo</label>
+                                            <input type="number" class="form-control" placeholder="Saldo" name="saldo" th:field="*{saldo}" step="any"/>
+                                        </div>
+
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="asesor" class="form-label">Asesor</label>
+                                            <input type="text" class="form-control" placeholder="" name="asesor" th:field="*{asesor}"/>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <label for="mensaje" class="form-label">Indicaciones</label>
+                                            <textarea name="indicaciones" th:field="*{indicaciones}" class="form-control"></textarea>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <input class="col-12 btn btn-primary" type="submit" name="guardar" value="Guardar"/>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                        <p class="float-end"><a href="#">Volver al principio</a></p>
+                    </main>
+                </div>
+            </div>
+        </header>
+  
+</body>
+</html>
